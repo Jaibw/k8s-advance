@@ -3,3 +3,7 @@ wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/install-docker.sh 
 
 # RUN 1ST CONTAINER 
 docker run hello-world 
+docker run ubuntu apt update
+docker run centos yum update
+docker run python python --version
+docker run openjdk java --help 
