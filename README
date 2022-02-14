@@ -96,4 +96,10 @@ docker stop database
 docker rm database
 sudo ls /var/lib/docker/volumes/mysqldata/_data
 
-
+# PORT BINDING AND VOLUME MAPPING 
+cd ~
+git clone https://github.com/Jaibw/FrozenYogurtShop.git
+ls FrozenYogurtShop/
+docker run -v /home/ubuntu/FrozenYogurtShop:/usr/share/nginx/html -p 80:80 --name website-01 -d nginx
+docker ps
+Open chrome - http://<public-ip>
