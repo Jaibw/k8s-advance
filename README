@@ -62,3 +62,25 @@ docker system info
 docker system events   # Ctrl + c
 docker system prune
 docker system prune -a
+
+docker run --name mycache -d redis 
+docker run --hostname ubuntu01 -it ubuntu bash 
+   # hostname 
+   # exit 
+docker run -e USER=DEMO -e PASS=SECRET -it ubuntu bash 
+   # echo $USER
+   # echo $PASS
+docker top mycache
+docker inspect mycache
+sudo ls /var/lib/docker
+docker run -it -m 300M ubuntu:14.04 /bin/bash
+   # top    press q to exit 
+   # exit 
+docker run -it -m 500M --memory-reservation 200M ubuntu:14.04 /bin/bash
+   # top    press q to exit 
+   # exit
+docker run -it --cpus 0.02 ubuntu:14.04 /bin/bash
+   # top    press q to exit 
+   # exit
+
+docker stats             # ctrl + c
