@@ -10,3 +10,10 @@ docker run openjdk java --help
 
 # LIST LOCAL IMAGES 
 docker images
+
+
+# LIST CONTAINERS 
+docker ps  -a
+
+# DOCKER HUB 
+https://hub.docker.com/search?type=image&image_filter=official
