@@ -12,3 +12,10 @@ docker images | grep hellojava
 
 # CREATE CONTAINER 
 docker run hellojava
+
+# DOCKER IMAGES 
+docker images
+docker pull mysql
+docker images
+docker inspect mysql
+docker rmi mysql 
