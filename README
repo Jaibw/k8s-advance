@@ -7,3 +7,6 @@ docker run ubuntu apt update
 docker run centos yum update
 docker run python python --version
 docker run openjdk java --help 
+
+# LIST LOCAL IMAGES 
+docker images
