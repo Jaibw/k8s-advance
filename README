@@ -10,10 +10,22 @@ docker run openjdk java --help
 
 # LIST LOCAL IMAGES 
 docker images
+docker pull mysql
+docker images
+docker inspect mysql
+docker rmi mysql 
 
 
 # LIST CONTAINERS 
 docker ps  -a
+docker run jpetazzo/clock
+docker run -d jpetazzo/clock
+docker run -d nginx
+docker run -e MYSQL_ROOT_PASSWORD=secret  -d mysql
+docker ps      #  active containers 
+docker stop <container-id>   
+docker stop <container-id> <container-id>  
+docker ps -a   # list all the containers
 
 # DOCKER HUB 
 https://hub.docker.com/search?type=image&image_filter=official
