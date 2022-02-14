@@ -55,3 +55,10 @@ docker exec -it database bash
 docker stop website database 
 docker rm website database   # rm - remove containers 
 docker rmi nginx mysql       # rmi - remove image 
+
+# DOCKER ADVANCE COMMANDS 
+docker system df
+docker system info
+docker system events   # Ctrl + c
+docker system prune
+docker system prune -a
