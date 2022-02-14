@@ -1,0 +1,14 @@
+# DOWNLOAD FILES 
+mkdir hellojava
+cd hellojava
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/java/Hello.java
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/java/Dockerfile
+cat Dockerfile
+
+# BUILD YOUR CUSTOM IMAGES 
+docker images | grep hellojava
+docker build -t hellojava .
+docker images | grep hellojava
+
+# CREATE CONTAINER 
+docker run hellojava
