@@ -84,3 +84,16 @@ docker run -it --cpus 0.02 ubuntu:14.04 /bin/bash
    # exit
 
 docker stats             # ctrl + c
+
+# VOLUME 
+docker volume ls
+docker volume create mysqldata
+docker volume ls
+docker inspect mysqldata
+sudo ls /var/lib/docker/volumes/mysqldata/_data
+docker run --name database -v mysqldata:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -d mysql
+docker stop database
+docker rm database
+sudo ls /var/lib/docker/volumes/mysqldata/_data
+
+
