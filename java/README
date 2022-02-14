@@ -12,18 +12,4 @@ docker images | grep hellojava
 
 # CREATE CONTAINER 
 docker run hellojava
-docker run jpetazzo/clock
-docker run -d jpetazzo/clock
-docker run -d nginx
-docker run -e MYSQL_ROOT_PASSWORD=secret  -d mysql
-docker ps      #  active containers 
-docker stop <container-id>   
-docker stop <container-id> <container-id>  
-docker ps -a   # list all the containers
 
-# DOCKER IMAGES 
-docker images
-docker pull mysql
-docker images
-docker inspect mysql
-docker rmi mysql 
