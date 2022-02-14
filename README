@@ -27,11 +27,20 @@ docker stop <container-id>
 docker stop <container-id> <container-id>  
 docker ps -a   # list all the containers
 
+docker ps       # active containers 
+docker ps -a    # all containers 
+docker ps -q    # ids for active conainers 
+docker ps -qa   # ids for all conainers
+docker ps -l    # info about last container
+
+docker stop `docker ps -q`    # stop all the active containers 
+docker rm `docker ps -qa`     # remove all the containers 
+
 # DOCKER HUB 
 https://hub.docker.com/search?type=image&image_filter=official
 
 # TROUBLESHOOT A CONTAINER
-docker run --name database -e MYSQL_ROOT_PASSWORD=secret  -d mysql
+docker run --name database -e MYSQL_ROOT_PASSWORD=secret -d mysql
 docker run --name website -d nginx
 docker ps 
 docker logs website
