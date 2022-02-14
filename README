@@ -29,3 +29,20 @@ docker ps -a   # list all the containers
 
 # DOCKER HUB 
 https://hub.docker.com/search?type=image&image_filter=official
+
+# TROUBLESHOOT A CONTAINER
+docker run --name database -e MYSQL_ROOT_PASSWORD=secret  -d mysql
+docker run --name website -d nginx
+docker ps 
+docker logs website
+docker exec -it website bash
+    # curl localhost
+    # exit 
+docker logs database 
+docker exec -it database bash
+    # ls /etc/mysql 
+    # cat /etc/mysql/my.cnf 
+    # exit 
+docker stop website database 
+docker rm website database   # rm - remove containers 
+docker rmi nginx mysql       # rmi - remove image 
