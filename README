@@ -1,2 +1,3 @@
 # INSTALL DOCKER 
 
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/install-docker.sh && sh install-docker.sh
