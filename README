@@ -13,6 +13,7 @@ docker images
 docker pull mysql
 docker images
 docker inspect mysql
+docker history mysql
 docker rmi mysql 
 
 
