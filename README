@@ -168,3 +168,19 @@ sudo apt -y upgrade && sudo systemctl reboot
 wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/k8s-node-ubuntu-setup.sh  
 sh k8s-node-ubuntu-setup.sh
 Paste sudo kubeadm join ****:6443 --token ***** --discovery-token-ca-cert-hash *****  
+
+# BASIC COMMANDS 
+kubectl get nodes
+kubectl get pods -A
+kubectl run demo --image=nginx
+kubectl get pods
+kubectl get pods -o wide
+kubectl get pods -o yaml 
+kubectl get pods -o json
+kubectl describe pod demo
+kubectl logs demo
+kubectl exec -it demo -- bash
+    # ls 
+    # apt update 
+    # exit 
+kubectl delete pod demo
