@@ -184,3 +184,12 @@ kubectl exec -it demo -- bash
     # apt update 
     # exit 
 kubectl delete pod demo
+
+
+# CREATE POD USING YAML/YML
+cd ~
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/firstpod.yaml
+cat firstpod.yaml
+kubectl create -f firstpod.yaml
+kubectl get pods 
+kubectl delete -f firstpod.yaml
