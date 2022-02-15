@@ -193,3 +193,17 @@ cat firstpod.yaml
 kubectl create -f firstpod.yaml
 kubectl get pods 
 kubectl delete -f firstpod.yaml
+
+# REPLICATION CONTROLLER DEMO 
+mkdir NAME
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/replication-controller.yaml
+sed 's/yourname/NAME/g' replication-controller.yaml > myrc.yaml
+kubectl create -f myrc.yaml
+kubectl get rc | grep NAME
+kubectl get pods | grep NAME
+kubectl get pods -o wide | grep NAME
+kubectl delete pod NAME-****
+kubectl get pods -o wide
+kubectl describe rc NAME
+kubectl delete -f myrc.yaml
