@@ -159,9 +159,12 @@ sudo apt update
 sudo apt -y upgrade && sudo systemctl reboot
 wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/k8s-master-ubuntu-setup.sh  
 sh k8s-master-ubuntu-setup.sh
+Copy kubeadm join ****:6443 --token ***** --discovery-token-ca-cert-hash *****  in a notepad 
+kubectl get nodes
 
 # SETUP CLUSTER WITH KUBEADM - WORKER 
 sudo apt update
 sudo apt -y upgrade && sudo systemctl reboot
 wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/k8s-node-ubuntu-setup.sh  
 sh k8s-node-ubuntu-setup.sh
+Paste sudo kubeadm join ****:6443 --token ***** --discovery-token-ca-cert-hash *****  
