@@ -153,3 +153,15 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube start --driver=docker
 minikube kubectl -- get pods -A
+
+# SETUP CLUSTER WITH KUBEADM - MASTER 
+sudo apt update
+sudo apt -y upgrade && sudo systemctl reboot
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/k8s-master-ubuntu-setup.sh  
+sh k8s-master-ubuntu-setup.sh
+
+# SETUP CLUSTER WITH KUBEADM - WORKER 
+sudo apt update
+sudo apt -y upgrade && sudo systemctl reboot
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/k8s-node-ubuntu-setup.sh  
+sh k8s-node-ubuntu-setup.sh
