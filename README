@@ -103,3 +103,8 @@ ls FrozenYogurtShop/
 docker run -v /home/ubuntu/FrozenYogurtShop:/usr/share/nginx/html -p 80:80 --name website-01 -d nginx
 docker ps
 Open chrome - http://<public-ip>
+
+# SEARCH AN IMAGE 
+docker search nginx
+Visit https://hub.docker.com/_/nginx 
+
