@@ -122,3 +122,14 @@ docker inspect myubuntu:1
 docker run -it myubuntu:1 bash
     # nginx 
     # vim                  type :q to exit 
+
+# CREATE AN IMAGE USING Dockerfile 
+mkdir ~/myubuntu
+cd ~/myubuntu
+wget -O Dockerfile https://raw.githubusercontent.com/Jaibw/k8s-advance/main/Dockerfile-demo
+docker build -t myubuntu:2 .
+docker history myubuntu:2
+docker inspect myubuntu:2
+docker run -it myubuntu:2 bash
+   # nginx 
+   # vim                  type :q to exit  
