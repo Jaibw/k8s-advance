@@ -133,3 +133,11 @@ docker inspect myubuntu:2
 docker run -it myubuntu:2 bash
    # nginx 
    # vim                  type :q to exit  
+
+# DOCKER COMPOSE 
+cd ~
+git clone https://github.com/Jaibw/FrozenYogurtShop.git website01
+cd website01
+cat docker-compose.yml
+docker-compose up
+Open chrome - http://<public-ip>
