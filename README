@@ -141,3 +141,14 @@ cd website01
 cat docker-compose.yml
 docker-compose up
 Open chrome - http://<public-ip>
+
+# INSTALL MINIKUBE 
+cd ~
+docker stop `docker ps  -qa`
+docker rm `docker ps  -qa`
+docker system prune -a
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start --driver=docker
+minikube kubectl -- get pods -A
