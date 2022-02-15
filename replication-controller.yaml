@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: yourname
+spec:
+  replicas: 3
+  selector:
+    app: yourname
+  template:
+    metadata:
+      name: yourname
+      labels:
+        app: yourname
+    spec:
+      containers:
+      - name: yourname
+        image: nginx
+        ports:
+        - containerPort: 80
