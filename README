@@ -109,3 +109,16 @@ Open chrome - http://<public-ip>
 docker search nginx
 Visit https://hub.docker.com/_/nginx 
 
+# CREATE AN IMAGE FROM CONTAINER 
+docker run --name myubuntu -it ubuntu bash
+    # apt update 
+    # apt install -y nginx vim curl 
+    # service nginx start  
+    # curl localhost  
+    # vim                   type :q to exit 
+docker commit myubuntu myubuntu:1 
+docker history myubuntu:1
+docker inspect myubuntu:1
+docker run -it myubuntu:1 bash
+    # nginx 
+    # vim                  type :q to exit 
