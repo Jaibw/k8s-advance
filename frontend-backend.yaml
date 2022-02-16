@@ -57,6 +57,7 @@ metadata:
 spec:
   selector:
     tier: frontend-yourname
+  type: NodePort 
   ports:
     - protocol: TCP
       port: 80
