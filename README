@@ -285,3 +285,27 @@ kubectl exec -it PODNAME -- sh
 # Open chrome and try to open 
 # http://13.52.183.186:nodeport
 
+
+#UPDATE AN IMAGE 
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/website.yaml
+sed 's/yourname/NAME/g' website.yaml > mywebsite.yaml
+kubectl create -f mywebsite.yaml
+kubectl get svc | grep NAME
+#      NAME          NodePort    <ClusterIP>   <none>        80:<nodeport>/TCP   23s
+# Open chrome and try to open 
+# http://13.52.183.186:nodeport
+
+kubectl set image deployment NAME web=jaibw/website1602:2
+kubectl rollout status deployment NAME
+kubectl rollout history deployment NAME
+kubectl get all | grep NAME 
+# Open chrome and try to open 
+# http://13.52.183.186:nodeport
+
+kubectl rollout undo deployment NAME
+kubectl rollout status deployment NAME
+kubectl rollout history deployment NAME
+
+# Open chrome and try to open 
+# http://13.52.183.186:nodeport
