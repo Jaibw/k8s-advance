@@ -279,7 +279,7 @@ kubectl describe svc frontend-NAME
 kubectl get pods | grep frontend-NAME
 # pick any pod from the list 
 kubectl exec -it PODNAME -- sh 
-   # telent backend-NAME 80 
+   # telnet backend-NAME 80 
    GET / 
    exit 
 # Open chrome and try to open 
