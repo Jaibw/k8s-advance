@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yourname
+  labels:
+    tier: yourname
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: yourname
+  template:
+    metadata:
+      labels:
+        tier: yourname
+    spec:
+      containers:
+      - name: web
+        image: jaibw/website1602:1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yourname
+spec:
+  selector:
+    tier: yourname
+  type: NodePort 
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
