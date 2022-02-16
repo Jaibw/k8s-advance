@@ -269,4 +269,19 @@ curl <ClusterIP>
 # http://3.101.25.27:nodeport
  
 
+# SERVICE: CLUSTERIP DEMO
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/frontend-backend.yaml
+sed 's/yourname/NAME/g' frontend-backend.yaml > myfrontend-backend.yaml
+kubectl create -f myfrontend-backend.yaml
+kubectl describe svc backend-NAME
+kubectl describe svc frontend-NAME
+kubectl get pods | grep frontend-NAME
+# pick any pod from the list 
+kubectl exec -it PODNAME -- sh 
+   # telent backend-NAME 80 
+   GET / 
+   exit 
+# Open chrome and try to open 
+# http://13.52.183.186:nodeport
 
