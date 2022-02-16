@@ -218,3 +218,22 @@ kubectl get rs | grep NAME
 kubectl get pods | grep NAME
 kubectl get pods -o wide | grep NAME
 
+kubectl scale --replicas=5 -f myrs.yaml
+kubectl get rs | grep NAME
+kubectl get pods -o wide | grep NAME
+
+kubectl scale --replicas=9 rs NAME
+kubectl get rs | grep NAME
+kubectl get pods -o wide | grep NAME
+
+sed 's/3/12/g' myrs.yaml > myrs-12.yaml
+kubectl replace -f myrs-12.yaml 
+kubectl get rs | grep NAME
+kubectl get pods -o wide | grep NAME
+
+sed 's/3/1/g' myrs.yaml > myrs-1.yaml
+kubectl replace -f myrs-1.yaml 
+kubectl get rs | grep NAME
+kubectl get pods -o wide | grep NAME
+
+kubectl delete rs NAME 
