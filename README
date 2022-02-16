@@ -251,3 +251,22 @@ kubectl get pods | grep NAME
 kubectl get pods -o wide | grep NAME
 kubectl get all | grep NAME
 
+# SERVICE: NODEPORT DEMO
+cd NAME
+wgethttps://raw.githubusercontent.com/Jaibw/k8s-advance/main/website-nodeport.yaml
+sed 's/yourname/NAME/g' website-nodeport.yaml > mywebsite-nodeport.yaml
+kubectl create -f mywebsite-nodeport.yaml
+kubectl get deployment | grep NAME
+kubectl get pods -o wide | grep NAME
+kubectl describe svc NAME
+kubectl get svc | grep NAME
+#      NAME          NodePort    <ClusterIP>   <none>        80:<nodeport>/TCP   23s
+curl <ClusterIP>
+# Open chrome and try to open 
+# http://13.52.183.186:nodeport
+# http://54.153.36.80:nodeport
+# http://13.57.253.143:nodeport
+# http://3.101.25.27:nodeport
+ 
+
+
