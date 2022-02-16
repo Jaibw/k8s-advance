@@ -253,7 +253,7 @@ kubectl get all | grep NAME
 
 # SERVICE: NODEPORT DEMO
 cd NAME
-wgethttps://raw.githubusercontent.com/Jaibw/k8s-advance/main/website-nodeport.yaml
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/website-nodeport.yaml
 sed 's/yourname/NAME/g' website-nodeport.yaml > mywebsite-nodeport.yaml
 kubectl create -f mywebsite-nodeport.yaml
 kubectl get deployment | grep NAME
