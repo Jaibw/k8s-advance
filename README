@@ -235,5 +235,19 @@ sed 's/3/1/g' myrs.yaml > myrs-1.yaml
 kubectl replace -f myrs-1.yaml 
 kubectl get rs | grep NAME
 kubectl get pods -o wide | grep NAME
-
+kubectl edit rs NAME
 kubectl delete rs NAME 
+
+
+# DEPLOYMENT DEMO
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/easy-deployment.yaml
+sed 's/yourname/NAME/g' easy-deployment.yaml > mydeployment.yaml
+kubectl create -f mydeployment.yaml
+kubectl get deployment | grep NAME
+kubectl describe deployment NAME
+kubectl get rs | grep NAME
+kubectl get pods | grep NAME
+kubectl get pods -o wide | grep NAME
+kubectl get all | grep NAME
+
