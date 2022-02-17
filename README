@@ -332,3 +332,8 @@ kubectl get pods -o wide | grep NAME
 kubectl get svc | grep NAME
 # web-NAME      NodePort    CLUSTER-IP   <none>        80 --- 
 curl CLUSTER-IP
+
+# RKE SETUP 
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/install-docker.sh && sh install-docker.sh
+docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:latest
+# Explore Rancher using https://<public-ip>
