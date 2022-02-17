@@ -322,3 +322,13 @@ kubectl get deployment | grep NAME
 kubectl describe deployment mysql-NAME
 kubectl get pod -o wide | grep NAME
 
+# NFS DEMO 
+cd NAME/
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/website-nfs.yaml
+sed 's/yourname/NAME/g' website-nfs.yaml > mynfs-site.yaml
+cat mynfs-site.yaml
+kubectl apply -f mynfs-site.yaml
+kubectl get pods -o wide | grep NAME
+kubectl get svc | grep NAME
+# web-NAME      NodePort    CLUSTER-IP   <none>        80 --- 
+curl CLUSTER-IP
