@@ -309,3 +309,16 @@ kubectl rollout history deployment NAME
 
 # Open chrome and try to open 
 # http://13.52.183.186:nodeport
+
+
+# MYSQL PV and PVC  
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/mysql-volume.yaml
+sed 's/yourname/NAME/g' mysql-volume.yaml  > mysqldemo.yaml
+kubectl create -f mysqldemo.yaml
+kubectl get pv | grep NAME
+kubectl get pvc | grep NAME
+kubectl get deployment | grep NAME
+kubectl describe deployment mysql-NAME
+kubectl get pod -o wide | grep NAME
+
