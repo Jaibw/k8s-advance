@@ -377,5 +377,13 @@ helm list | grep NAME
 helm delete NAME-********
 kubectl get all | grep NAME 
 
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm search repo bitnami
+helm repo update
+helm install NAME bitnami/mysql
+helm list | grep NAME
+helm status NAME 
+helm uninstall NAME
+
 Resources:
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
