@@ -388,4 +388,5 @@ helm status NAME
 helm uninstall NAME
 
 Resources:
+https://kubernetes.io/docs/concepts/workloads/controllers/
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
