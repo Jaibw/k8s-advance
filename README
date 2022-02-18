@@ -361,6 +361,7 @@ echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt
 sudo apt-get update
 sudo apt-get install helm
 
+# HELM CUSTOM REPO
 mkdir NAME
 cd NAME
 helm create NAME
@@ -377,6 +378,7 @@ helm list | grep NAME
 helm delete NAME-********
 kubectl get all | grep NAME 
 
+# ADD HELM REPO 
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm search repo bitnami
 helm repo update
