@@ -310,6 +310,23 @@ kubectl rollout history deployment NAME
 # Open chrome and try to open 
 # http://13.52.183.186:nodeport
 
+# CONFIGMAP 
+cd NAME
+wget https://github.com/Jaibw/docker/blob/main/mypod-with-configmap.yaml
+sed 's/myname/NAME/g' mypod-with-configmap.yaml  > mypod-configmap.yaml
+kubectl create -f mypod-configmap.yaml
+kubectl get pod -o wide | grep NAME
+kubectl exec -it PODNAME -- bash 
+  # echo $OWNER
+
+# SECRET 
+cd NAME
+wget https://raw.githubusercontent.com/Jaibw/docker/main/mypod-with-secret.yaml
+sed 's/myname/NAME/g' mypod-with-secret.yaml  > mypod-secret.yaml
+kubectl create -f mypod-secret.yaml
+kubectl get pod -o wide | grep NAME
+kubectl exec -it PODNAME -- bash 
+  # echo $platform
 
 # MYSQL PV and PVC  
 cd NAME
@@ -390,3 +407,7 @@ helm uninstall NAME
 Resources:
 https://kubernetes.io/docs/concepts/workloads/controllers/
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+https://kubernetes.io/docs/concepts/configuration/configmap/
+https://kubernetes.io/docs/concepts/configuration/secret/
+https://istio.io/latest/docs/setup/getting-started/
+
