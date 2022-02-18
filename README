@@ -354,5 +354,28 @@ kubectl --namespace monitoring patch svc prometheus-k8s -p '{"spec": {"type": "N
 kubectl --namespace monitoring patch svc alertmanager-main -p '{"spec": {"type": "NodePort"}}'
 kubectl --namespace monitoring patch svc grafana -p '{"spec": {"type": "NodePort"}}'
 
+# INSTALL HELM
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+mkdir NAME
+cd NAME
+helm create NAME
+tree NAME
+cat NAEME/Chart.yaml
+cat NAEME/values.yaml
+cat NAEME/templates/deployment.yaml
+kubectl get all | grep NAME
+helm install NAME --generate-name
+helm list | grep NAME 
+kubectl get all | grep NAME
+curl <ClusterIP>
+helm list | grep NAME 
+helm delete NAME-********
+kubectl get all | grep NAME 
+
 Resources:
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
