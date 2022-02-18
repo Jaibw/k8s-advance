@@ -337,3 +337,20 @@ curl CLUSTER-IP
 wget https://raw.githubusercontent.com/Jaibw/k8s-advance/main/install-docker.sh && sh install-docker.sh
 docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:latest
 # Explore Rancher using https://<public-ip>
+
+# Deploy Prometheus and Grafana 
+# Clone kube-prometheus project
+git clone https://github.com/prometheus-operator/kube-prometheus.git
+cd kube-prometheus 
+# Creating monitoring namespace
+kubectl create -f manifests/setup
+kubectl get ns monitoring
+kubectl get pods -n monitoring
+# Deploy Prometheus Monitoring Stack on Kubernetes
+kubectl create -f manifests/
+kubectl get all -n monitoring
+#Access it from node port 
+kubectl --namespace monitoring patch svc prometheus-k8s -p '{"spec": {"type": "NodePort"}}'
+kubectl --namespace monitoring patch svc alertmanager-main -p '{"spec": {"type": "NodePort"}}'
+kubectl --namespace monitoring patch svc grafana -p '{"spec": {"type": "NodePort"}}'
+
